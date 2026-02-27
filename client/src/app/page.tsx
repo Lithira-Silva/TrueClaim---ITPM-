@@ -1,5 +1,5 @@
-import { Component as LoginPage } from "@/components/ui/animated-characters-login-page";
+import { redirect } from "next/navigation";
 
 export default function HomePage() {
-  return <LoginPage />;
+  redirect("/login");
 }
