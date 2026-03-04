@@ -32,7 +32,7 @@ const transitionVariants = {
 
 const menuItems = [
   { name: 'Features',     href: '#features' },
-  { name: 'How it Works', href: '#how-it-works' },
+  { name: 'Match Items',  href: '/match-items' },
   { name: 'Universities', href: '#universities' },
   { name: 'Contact',      href: '#contact' },
 ];
@@ -89,9 +89,9 @@ const HeroHeader = () => {
               <ul className="flex gap-8 text-sm">
                 {menuItems.map((item, i) => (
                   <li key={i}>
-                    <a href={item.href} className="text-white/60 hover:text-white block duration-150 transition-colors">
+                    <Link href={item.href} className="text-white/60 hover:text-white block duration-150 transition-colors">
                       {item.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -191,18 +191,20 @@ export function HeroSection() {
                   <div className="rounded-[14px] border p-0.5" style={{ borderColor: blueBorder, background: blueDim }}>
                     <Button asChild size="lg" className="rounded-xl px-6 text-base text-white font-semibold"
                       style={{ background: blue, boxShadow: `0 0 24px ${blueGlow}` }}>
-                      <Link href="/login">
+                      <Link href="/lostandfound?tab=lost">
                         <span className="text-nowrap">Report a Lost Item</span>
                       </Link>
                     </Button>
                   </div>
-                  <Button asChild size="lg" variant="ghost"
-                    className="rounded-xl px-6 text-white/80 hover:text-white border"
-                    style={{ borderColor: subtle }}>
-                    <a href="#how-it-works">
-                      <span className="text-nowrap">See How It Works ↓</span>
-                    </a>
-                  </Button>
+
+                  <div className="rounded-[14px] border p-0.5" style={{ borderColor: blueBorder, background: blueDim }}>
+                    <Button asChild size="lg" className="rounded-xl px-6 text-base text-white font-semibold"
+                      style={{ background: blue, boxShadow: `0 0 24px ${blueGlow}` }}>
+                      <Link href="/lostandfound?tab=found">
+                        <span className="text-nowrap">Report a Found Item</span>
+                      </Link>
+                    </Button>
+                  </div>
                 </AnimatedGroup>
               </div>
             </div>
